@@ -184,36 +184,36 @@ insert into blood_donation.blood_unit   (unit_id, donor_id, bloodbank_id, harves
 
 -- Insert patient records
 insert into blood_donation.patient  (patient_id, version_no, person_id, hospital_id, finished_flg, diagnosis_desc)
-                            values  (1, 1, 6, 0, false, 'Недостаток калика в организме');
+                            values  (1, 1, 6, 3, false, 'Недостаток калика в организме');
 
 insert into blood_donation.patient  (patient_id, version_no, person_id, hospital_id, finished_flg, diagnosis_desc)
-                            values  (2, 1, 7, 0, false, 'Передоз диффуров');
+                            values  (2, 1, 7, 1, false, 'Передоз диффуров');
 
 -- Differential equations have killed me, I'm running low on imagination, though I can make more as a part of upcoming task
 insert into blood_donation.patient  (patient_id, version_no, person_id, hospital_id, finished_flg, diagnosis_desc)
-                            values  (3, 1, 8, 0, false, null);
+                            values  (3, 1, 8, 2, false, null);
 
 insert into blood_donation.patient  (patient_id, version_no, person_id, hospital_id, finished_flg, diagnosis_desc)
-                            values  (4, 1, 9, 0, false, null);
+                            values  (4, 1, 9, 4, false, null);
 
 insert into blood_donation.patient  (patient_id, version_no, person_id, hospital_id, finished_flg, diagnosis_desc)
-                            values  (5, 1, 10, 0, false, null);
+                            values  (5, 1, 10, 5, false, null);
 
 -- Insert transfusion requests
 
 insert into blood_donation.transfusion_request  (request_id, valid_from_dttm, valid_to_dttm, patient_id, version_no, request_dttm, satisfied_flg)
-                                        values  (default, '2021-04-07', 'infinity', 1, 1, 0, false);
+                                        values  (1, '2021-04-07', 'infinity', 1, 1, '2021-04-07', false);
 
 insert into blood_donation.transfusion_request  (request_id, valid_from_dttm, valid_to_dttm, patient_id, version_no, request_dttm, satisfied_flg)
-                                        values  (default, '2021-04-03', 'infinity', 2, 1, 0, false);
+                                        values  (2, '2021-04-03', 'infinity', 2, 1, '2021-04-03', false);
 
 insert into blood_donation.transfusion_request  (request_id, valid_from_dttm, valid_to_dttm, patient_id, version_no, request_dttm, satisfied_flg)
-                                        values  (default, '2021-04-04', 'infinity', 3, 1, 0, false);
+                                        values  (3, '2021-04-04', 'infinity', 3, 1, '2021-04-04', false);
 
 insert into blood_donation.transfusion_request  (request_id, valid_from_dttm, valid_to_dttm, patient_id, version_no, request_dttm, satisfied_flg)
-                                        values  (default, '2021-04-06', 'infinity', 4, 1, 0, false);
+                                        values  (4, '2021-04-06', 'infinity', 4, 1, '2021-04-06', false);
 
 insert into blood_donation.transfusion_request  (request_id, valid_from_dttm, valid_to_dttm, patient_id, version_no, request_dttm, satisfied_flg)
-                                        values  (default, '2021-03-31', 'infinity', 5, 1, 0, false);
+                                        values  (5, '2021-03-31', 'infinity', 5, 1, '20201-03-31', false);
 
 -- This is it, I guess. Thank you for your attention!
