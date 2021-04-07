@@ -3,6 +3,7 @@
 ----------- Author: Aleksei Volkov ------------
 ---------------- Group: Б05-932 ---------------
 ----------------- Spring 2021 -----------------
+-------------- Database Structure -------------
 -----------------------------------------------
 
 drop schema if exists blood_donation cascade;
@@ -63,7 +64,7 @@ create table blood_donation.transfusion_request (
     version_no      int         not null,
     request_dttm    timestamp   not null,
     satisfied_flg   bool        not null,
-    primary key (request_id, valid_from_dttm, valid_to_dttm),
+    primary key (request_id, valid_to_dttm),
     foreign key (patient_id, version_no) references blood_donation.patient(patient_id, version_no)
 );
 
@@ -75,11 +76,14 @@ create table blood_donation.blood_unit (
     available_flg   bool        not null
 );
 
-create table blood_donation.blood_donation_x_hostpital (
-    donor_id    int references blood_donation.donor(donor_id) not null,
-    hospital_id int references blood_donation.hospital(hospital_id) not null,
-    primary key (donor_id, hospital_id)
-);
+-- It seems that this table has lost its original purpose. Removing it does not break project requirements,
+-- so I will remove it c:
+
+-- create table blood_donation.donor_x_hostpital (
+--     donor_id    int references blood_donation.donor(donor_id) not null,
+--     hospital_id int references blood_donation.hospital(hospital_id) not null,
+--     primary key (donor_id, hospital_id)
+-- );
 
 create table blood_donation.hospital_x_bloodbank (
     hospital_id     int references blood_donation.hospital(hospital_id) not null,
@@ -90,6 +94,6 @@ create table blood_donation.hospital_x_bloodbank (
 -- This seems to be it. Thank you for dedicating your time to go through all of this mess.
 -- If you want to see a cute photo of a wolf, follow the link:
 -- https://🐺🐺🐺🐺.tk/sleepy-wolf.jpg (This is an actual URL, emojis are supposed to be in the link, but your text editor
--- might incorrectly handle them, i. e. do not display them at all. DataGrip editor does not handle them correnctly).
+-- might handle them incorrectly, i. e. do not display them at all. DataGrip does not handle them correnctly in my case).
 -- If the link does not work, there is a punycode-converted version:
 -- https://xn--fp8haaa.tk/sleepy-wolf.jpg
