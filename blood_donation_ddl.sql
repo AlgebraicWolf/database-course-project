@@ -16,9 +16,9 @@ create table blood_donation.person (
     person_id       serial                  primary key,
     person_nm       varchar(200)            not null,
     gender_code     blood_donation.gender   not null,
-    bloodtype_code  int                     not null,
+    bloodtype_code  int                     not null check(bloodtype_code >= 1 and bloodtype_code <= 4),  -- Check that bloodtype is valid
     rhesus_flg      bool                    not null,
-    birth_dt        date                    not null
+    birth_dt        date                    not null check(birth_dt <= now() and birth_dt >= '1900-01-01') -- Person can't be in the system before they are born. Also, it seems that the current longest living human was born in the 20th century, so we can safely implement a cutoff
 );
 
 create table blood_donation.organization (
