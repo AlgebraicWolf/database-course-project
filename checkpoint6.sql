@@ -46,5 +46,5 @@ select person_id, person_nm, min(diff) as minimal_interval, max(diff) as maximal
 
 -- Thank you for your attention!
 -- Here is another cute picture of wolves
--- Link A: https://xn--fp8haaa.tk/🐺🐺🐺🐺.jpg
+-- Link A: https://🐺🐺🐺🐺.tk/wolf-scarf.jpg
 -- Link B: https://xn--fp8haaa.tk/wolf-scarf.jpg
